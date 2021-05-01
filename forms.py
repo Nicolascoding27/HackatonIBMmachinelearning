@@ -8,7 +8,7 @@ from wtforms.validators import ValidationError
 class PredictForm(FlaskForm):
     Unnamed=IntegerField('Unnamed:0')
     Cliente=IntegerField('Cliente')    
-    Pais = StringField('Pais')
+    Pais = StringField('Pais(Peru,Colombia,Ecuador')
     Moneda = StringField('Moneda')
     Unidad = StringField('Unidad')
     MesVencimiento = IntegerField('MesVencimiento')

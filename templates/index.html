@@ -151,11 +151,11 @@ body {
             <div class="login__container">
                 <div class="form-field">
                     <!-- <input id="Unamed" class="input_login" type="text" placeholder="Leave_Empty"> -->
-                {{ form.Unnamed.label }} {{ form.Unnamed }}
+                 {{ form.Unnamed(placeholder="Empty") }}
                 </div>
                 <div class="form-field">
                     <!-- <input id="Cliente" class="input_login" type="text" placeholder="Cliente"> -->
-                {{ form.Cliente.label }} {{ form.Cliente(size=20) }}
+                {{ form.Cliente.label }} {{ form.Cliente(size=20,placeholder="Peru,Colombia,Ecuador") }}
                 </div>
                 <div class="form-field">
                     <!-- <input id="Pais" class="input_login" type="text" placeholder="Pais"> -->
