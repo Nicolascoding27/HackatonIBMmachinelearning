@@ -149,41 +149,38 @@ body {
             <h1>IBM challenge</h1>
 
             <div class="login__container">
-                <div class="form-field">
-                    <!-- <input id="Unamed" class="input_login" type="text" placeholder="Leave_Empty"> -->
-                 {{ form.Unnamed(placeholder="Empty") }}
-                </div>
+
                 <div class="form-field">
                     <!-- <input id="Cliente" class="input_login" type="text" placeholder="Cliente"> -->
-                {{ form.Cliente.label }} {{ form.Cliente(size=20,placeholder="Cliente") }}
+                {{ form.Cliente(placeholder="Cliente",class_='input_login') }}
                 </div>
                 <div class="form-field">
                     <!-- <input id="Pais" class="input_login" type="text" placeholder="Pais"> -->
-                {{ form.Pais.label }} {{ form.Pais(placeholder="Peru,Colombia,Ecuador")}}
+                {{ form.Pais(placeholder="Peru,Colombia,Ecuador",class_='input_login')}}
                 </div>
                 <div class="form-field">
                     <!-- <input id="Moneda" class="input_login" type="text" placeholder="Pais"> -->
-                {{ form.Moneda.label }} {{ form.Moneda(placeholder="Ingrese Moneda") }}
+                {{ form.Moneda(placeholder="Ingrese Moneda",class_='input_login') }}
                 </div>
                 <div class="form-field">
                     <!-- <input id="Unidad" class="input_login" type="text" placeholder="Unidad"> -->
-                {{ form.Unidad.label }} {{ form.Unidad(placeholder="Unidad de negocio") }}
+                {{ form.Unidad(placeholder="Unidad de negocio",class_='input_login') }}
                 </div>  
                 <div class="form-field">
                     <!-- <input id="MesVencimiento" class="input_login" type="text" placeholder="MesVencimiento"> -->
-                {{ form.MesVencimiento.label }} {{ form.MesVencimiento(placeholder="Mes de vencimiento")}}
+                {{ form.MesVencimiento(placeholder="Mes de vencimiento",class_='input_login')}}
                 </div>
                 <div class="form-field">
                     <!-- <input id="Monto" class="input_login" type="text" placeholder="Monto"> -->
-                {{ form.Monto.label }} {{ form.Monto(placeholder="Monto de factura") }}
+                {{ form.Monto(placeholder="Monto de factura",class_='input_login') }}
                 </div>
                 <div class="form-field">
                     <!-- <input id="plazo" class="input_login" type="text" placeholder="Plazo"> -->
-                {{ form.plazo.label }} {{ form.plazo(placeholder="Plazo de deuda") }}
+                {{ form.plazo(placeholder="Plazo de deuda",class_='input_login') }}
                 </div>
                 <div class="form-field">
                     <!-- <input id="Prob_D" class="input_login" type="text" placeholder="Pais"> -->
-                {{ form.Prob_D.label }} {{ form.Prob_D(placeholder="Probabilidad de inpago")}}
+                {{ form.Prob_D(placeholder="Probabilidad de inpago",class_='input_login')}}
                 </div>
                 <input class="button" id="submit" style="margin-bottom: 10px;" name="submit" type="submit" value="Predict">
             </div>
