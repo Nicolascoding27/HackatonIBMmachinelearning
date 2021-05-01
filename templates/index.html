@@ -140,6 +140,10 @@ body {
   margin-top: 30px;
   text-align: center;
 }
+.nodisplay{
+    display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
 </style>
 <body>
@@ -149,10 +153,10 @@ body {
             <h1>IBM challenge</h1>
 
             <div class="login__container">
-                <!-- <div class="form-field">
-                    <input id="Unamed" class="input_login" type="text" placeholder="Leave_Empty">
-                 {{ form.Unnamed(placeholder="Empty") }}
-                </div> -->
+                <div class="form-field nodisplay" >
+                    <!-- <input id="Unamed" class="input_login" type="text" placeholder="Leave_Empty"> -->
+                 {{ form.Unnamed(placeholder="Empty")}}
+                </div>
                 
                 <div class="form-field">
                     <!-- <input id="Cliente" class="input_login" type="text" placeholder="Cliente"> -->
