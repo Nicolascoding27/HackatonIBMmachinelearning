@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 900;
+    //background: linear-gradient(#21c08b, #5E1DFC);
+    background: #0D1321;
+}
+
+.divisor{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+
+    h1 {
+        margin: 100px 0px 20px;
+        font-weight: 900;
+    }
+}
+
+.login__container {
+    background-color: rgba(255,255,255, 0.1);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.input_login {
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    background-color: transparent ;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2px solid white;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    width: 100%;
+    outline: none;
+    height: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.button {
+    width: 80%;
+    background-color: rgba(255,255,255, 0.1);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+    letter-spacing: 1px;
+    height: 50px;
+    margin: 20px 0px;
+    transition: 500ms;
+    align-self: center;
+
+    &:hover {
+        background: #21c08b;
+    }
+}
+
+/* Mostrar datos */
+.position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        color: #21c08b;;
+        margin-top: 30px;
+        text-align: center;
+    }
+}

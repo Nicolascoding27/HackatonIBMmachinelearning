@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+  background: #0D1321;
+}
+
+.divisor {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px 30px;
+  min-height: calc(100vh - 200px);
+}
+
+.login h1 {
+  margin: 100px 0px 20px;
+  font-weight: 900;
+}
+
+.login__container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  padding: 60px 68px 40px;
+  min-height: 700px;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.input_login {
+  color: white;
+  font-family: 'Mulish', sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid white;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  width: 100%;
+  outline: none;
+  height: 50px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.button {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Mulish', sans-serif;
+  letter-spacing: 1px;
+  height: 50px;
+  margin: 20px 0px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.button:hover {
+  background: #21c08b;
+}
+
+/* Mostrar datos */
+.position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.position h1 {
+  text-align: center;
+}
+
+.position p {
+  color: #21c08b;
+  margin-top: 30px;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
