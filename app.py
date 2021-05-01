@@ -37,6 +37,7 @@ def predict():
         if(form.MesVencimiento.data == None): 
           python_object = []
         else:
+          form.Unnamed=1
           python_object = [form.Unnamed.data,form.Cliente.data, form.Pais.data,form.Moneda.data,form.Unidad.data, 
             form.MesVencimiento.data,form.Monto.data, form.plazo.data,float(form.Prob_D.data)]
         #Transform python objects to  Json
@@ -72,4 +73,5 @@ def predict():
         else: 
           respuesta="Es probable que no entre en default"
         form.abc = respuesta # this returns the response back to the front page
+        form.ammount=form.Prob_D.data*form.Monto.data
         return render_template('index.html', form=form)

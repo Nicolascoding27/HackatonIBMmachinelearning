@@ -17,3 +17,4 @@ class PredictForm(FlaskForm):
     Prob_D = DecimalField('Prob_D')
     submit = SubmitField('Predict')
     abc = "" # this variable is used to send information back to the front page
+    ammount=""
