@@ -6,11 +6,14 @@ from wtforms.validators import Length
 from wtforms.validators import ValidationError
 
 class PredictForm(FlaskForm):
-   age = IntegerField('Age')    
-   sex = StringField('Sex')
-   bmi = DecimalField('BMI')
-   children = IntegerField('Children')
-   smoker = StringField('Smoker')
-   region = StringField('Region')
-   submit = SubmitField('Predict')
-   abc = "" # this variable is used to send information back to the front page
+    Unnamed=IntegerField('Unnamed:0')
+    Cliente=IntegerField('Cliente')    
+    Pais = StringField('Pais')
+    Moneda = StringField('Moneda')
+    Unidad = StringField('Unidad')
+    MesVencimiento = IntegerField('MesVencimiento')
+    Monto = IntegerField('Monto')
+    plazo = IntegerField('plazo')
+    Prob_D = DecimalField('Prob_D')
+    submit = SubmitField('Predict')
+    abc = "" # this variable is used to send information back to the front page

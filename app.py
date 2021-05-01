@@ -32,23 +32,30 @@ def predict():
         token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
         mltoken = token_response.json()["access_token"]
         # NOTE: generate iam_token and retrieve ml_instance_id based on provided documentation
-        header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + {"eyJraWQiOiIyMDIxMDQyMDE4MzYiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC02NjIwMDFWM1FSIiwiaWQiOiJJQk1pZC02NjIwMDFWM1FSIiwicmVhbG1pZCI6IklCTWlkIiwianRpIjoiZmE0MGY3MWYtODM4Ni00NDk0LTllMmUtZGRhMzNkZDFjOTYzIiwiaWRlbnRpZmllciI6IjY2MjAwMVYzUVIiLCJnaXZlbl9uYW1lIjoiU2FudGlhZ28iLCJmYW1pbHlfbmFtZSI6IlJpb3MiLCJuYW1lIjoiU2FudGlhZ28gUmlvcyIsImVtYWlsIjoic2FudGlhZ28ucmlvc29AdWRlYS5lZHUuY28iLCJzdWIiOiJzYW50aWFnby5yaW9zb0B1ZGVhLmVkdS5jbyIsImF1dGhuIjp7InN1YiI6InNhbnRpYWdvLnJpb3NvQHVkZWEuZWR1LmNvIiwiaWFtX2lkIjoiaWFtLTY2MjAwMVYzUVIiLCJuYW1lIjoiU2FudGlhZ28gUmlvcyIsImdpdmVuX25hbWUiOiJTYW50aWFnbyIsImZhbWlseV9uYW1lIjoiUmlvcyIsImVtYWlsIjoic2FudGlhZ28ucmlvc29AdWRlYS5lZHUuY28ifSwiYWNjb3VudCI6eyJ2YWxpZCI6dHJ1ZSwiYnNzIjoiYTQ5OGQ4N2I1YWJmNGM1Zjg0NzMzNWM2ZjA1MGY5NzMiLCJmcm96ZW4iOnRydWV9LCJpYXQiOjE2MTk4ODg5NzEsImV4cCI6MTYxOTg5MjU3MSwiaXNzIjoiaHR0cHM6Ly9pYW0uY2xvdWQuaWJtLmNvbS9vaWRjL3Rva2VuIiwiZ3JhbnRfdHlwZSI6InVybjppYm06cGFyYW1zOm9hdXRoOmdyYW50LXR5cGU6YXBpa2V5Iiwic2NvcGUiOiJpYm0gb3BlbmlkIiwiY2xpZW50X2lkIjoiZGVmYXVsdCIsImFjciI6MSwiYW1yIjpbInB3ZCJdfQ.og7cRQL3wVIFOOMJM48GDTFIxib9genHLlUkHdvq0JNGRQvzDnaRg_nhRaeyYWBgiR89TgXLtCt8o8POCPe1Xjej9IPxbPAHOLDghs8zERjET-l11mT1rZo0Hh4v054XeX7xPmy9vtpuxa_WgjMHVV6t_YTDGgzYIXilE38Q6lZVeog4yEqoSbECJgfmvl1UbKGqNmctyllEDsND18cBbrkgmN4rwftFgYHcOTD3KSUKgov_TbiEpsdz22i0oKYTTO4VOHTuPb7qNtj_ZzcViAKrNUFvnf7BNHihzEz5l1Ce2Iot_OEJbhbgfeUYJc7ucNLfBIt55OWp9bKOl-UhOA","refresh_token":"not_supported","token_type":"Bearer","expires_in":3600,"expiration":1619892571,"scope":"ibm openid"}%}
+        header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + "eyJraWQiOiIyMDIxMDQyMDE4MzYiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC02NjIwMDFWM1FSIiwiaWQiOiJJQk1pZC02NjIwMDFWM1FSIiwicmVhbG1pZCI6IklCTWlkIiwianRpIjoiMmI2MmYzOWUtYWE1YS00YjNkLTkxNzctNjQ0YmFkYWQxYjZkIiwiaWRlbnRpZmllciI6IjY2MjAwMVYzUVIiLCJnaXZlbl9uYW1lIjoiU2FudGlhZ28iLCJmYW1pbHlfbmFtZSI6IlJpb3MiLCJuYW1lIjoiU2FudGlhZ28gUmlvcyIsImVtYWlsIjoic2FudGlhZ28ucmlvc29AdWRlYS5lZHUuY28iLCJzdWIiOiJzYW50aWFnby5yaW9zb0B1ZGVhLmVkdS5jbyIsImF1dGhuIjp7InN1YiI6InNhbnRpYWdvLnJpb3NvQHVkZWEuZWR1LmNvIiwiaWFtX2lkIjoiaWFtLTY2MjAwMVYzUVIiLCJuYW1lIjoiU2FudGlhZ28gUmlvcyIsImdpdmVuX25hbWUiOiJTYW50aWFnbyIsImZhbWlseV9uYW1lIjoiUmlvcyIsImVtYWlsIjoic2FudGlhZ28ucmlvc29AdWRlYS5lZHUuY28ifSwiYWNjb3VudCI6eyJ2YWxpZCI6dHJ1ZSwiYnNzIjoiYTQ5OGQ4N2I1YWJmNGM1Zjg0NzMzNWM2ZjA1MGY5NzMiLCJmcm96ZW4iOnRydWV9LCJpYXQiOjE2MTk4OTMwNzQsImV4cCI6MTYxOTg5NjY3NCwiaXNzIjoiaHR0cHM6Ly9pYW0uY2xvdWQuaWJtLmNvbS9vaWRjL3Rva2VuIiwiZ3JhbnRfdHlwZSI6InVybjppYm06cGFyYW1zOm9hdXRoOmdyYW50LXR5cGU6YXBpa2V5Iiwic2NvcGUiOiJpYm0gb3BlbmlkIiwiY2xpZW50X2lkIjoiZGVmYXVsdCIsImFjciI6MSwiYW1yIjpbInB3ZCJdfQ.BuuoIiwSQTOdQuuXz7yhpLHhNS7pVe3jj-6TGB_nc1uGiizLsFmjw8x_TqbT9Yv5ksACqFJhLpFjrW2McCLm6n3nKoJFbKtEtoDBVPXLpmN2mgXxMK0y7XIx_FVxj7KCsypS6YkMK6drgbegvQeCHTGA5tYVeh_sNM3PLfMTKfg9AmAguBl1xaNIiIRS5kQu_kzemhIjcFVtRAn0MVHVwlxJmAFEXfPdeqVttyqNCxNUvW4mQuFpZ4Itn-g7kvy8ejs62lVtFmD8twNdsH7agmPsGgsXtpG2LNocvWISr2KPJmPvZt4TrofcsFtESqyh2u2D4AZXyc2VItKcjCs2dQ"}
 
         if(form.MesVencimiento.data == None): 
           python_object = []
         else:
-          python_object = [form.Cliente.data, form.Pais.data,form.Moneda.data,form.Unidad.data, 
-            form.MesVencimiento.data,form.Monto.data, form.Plazo.data,float(form.Prob_D.data)]
+          python_object = [form.Unnamed.data,form.Cliente.data, form.Pais.data,form.Moneda.data,form.Unidad.data, 
+            form.MesVencimiento.data,form.Monto.data, form.plazo.data,float(form.Prob_D.data)]
         #Transform python objects to  Json
 
         userInput = []
         userInput.append(python_object)
 
         # NOTE: manually define and pass the array(s) of values to be scored in the next line
-        payload_scoring = {"input_data": [{"fields": ["age", "sex", "bmi",
-          "children", "smoker", "region"], "values": userInput }]}
+        payload_scoring = {"input_data": [{"fields":    ["Unnamed: 0",
+				"Cliente",
+				"Pais",
+				"Moneda",
+				"Unidad",
+				"MesVencimiento",
+				"Monto",
+				"plazo",
+				"Prob_D"], "values": userInput }]}
 
-        response_scoring = requests.post("https://us-south.ml.cloud.ibm.com/ml/v4/deployments/af429633-ad58-4f14-9046-af99e3ce8423/predictions?version=2021-05-01", json=payload_scoring, headers=header)
+        response_scoring = requests.post("https://us-south.ml.cloud.ibm.com/ml/v4/deployments/37264cc6-49e9-496a-bf4e-a955f07affe4/predictions?version=2021-05-01", json=payload_scoring, headers=header)
 
         output = json.loads(response_scoring.text)
         print(output)
