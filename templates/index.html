@@ -149,10 +149,10 @@ body {
             <h1>IBM challenge</h1>
 
             <div class="login__container">
-                <div class="form-field">
-                    <!-- <input id="Unamed" class="input_login" type="text" placeholder="Leave_Empty"> -->
+                <!-- <div class="form-field">
+                    <input id="Unamed" class="input_login" type="text" placeholder="Leave_Empty">
                  {{ form.Unnamed(placeholder="Empty") }}
-                </div>
+                </div> -->
                 <div class="form-field">
                     <!-- <input id="Cliente" class="input_login" type="text" placeholder="Cliente"> -->
                 {{ form.Cliente.label }} {{ form.Cliente(size=20,placeholder="Peru,Colombia,Ecuador") }}
@@ -191,7 +191,9 @@ body {
 
         <div class="position">
             <h1>¿El cliente entrara en default?</h1>
-            <h3 id="b">{{ form.abc }}</h3>
+            <h3 id="b">{{ form.abc }}</h3><br><br>
+            <h1>Provision recomendada:</h1>
+            <h3 id="b">${{ form.ammount}}</h3>
         </div>
     </div>
 
